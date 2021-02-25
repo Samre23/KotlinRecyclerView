@@ -15,6 +15,7 @@ class FlowerAdapter(val flowerList: Array<String>) :
     class FlowerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private val flowerTextView:TextView = itemView.findViewById(R.id.txt)
         fun bind(word:String){
+            Log.e("onBindViewHolder ==> ","")
             flowerTextView.text = word
         }
     }
@@ -25,11 +26,12 @@ class FlowerAdapter(val flowerList: Array<String>) :
     }
 
     override fun getItemCount(): Int {
-        Log.e("ListSize ==> ",flowerList.size.toString())
+        Log.e("getItemCount ==> ",flowerList.size.toString())
         return  flowerList.size
     }
 
     override fun onBindViewHolder(holder: FlowerViewHolder, position: Int) {
+        Log.e("onBindViewHolder ==> ",flowerList.size.toString())
         holder.bind(flowerList[position])
     }
 
